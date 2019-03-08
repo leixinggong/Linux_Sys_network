@@ -7,9 +7,21 @@
 //
 
 #include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <string.h>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+
+    int fd = creat("/Users/glx/Desktop/AAA.txt", 0644);
+    if (fd == -1)
+    {
+        perror("creat");
+        return -1;
+    }
+    
+    printf("creat success");
+    
     return 0;
 }

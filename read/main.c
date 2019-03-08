@@ -60,6 +60,8 @@ int main(int argc, const char * argv[])
         printf("%s",buf);
     }
     
+    close(fd);
+    
     
     return 0;
 }
